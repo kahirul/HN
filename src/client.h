@@ -2,6 +2,7 @@
 #define CLIENT_H
 
 #include <stdio.h>
+#include <stdbool.h>
 #include <json-c/json.h>
 
 struct curl_fetch_t

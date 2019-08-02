@@ -2,6 +2,7 @@
 #define HN_H
 
 #include <stdio.h>
+#include <stdbool.h>
 #include <json-c/json.h>
 
 struct item
@@ -36,6 +37,6 @@ void setDescendants(struct item *item, int descendants);
 
 struct item *parse_item(struct json_object *json);
 
-void printItem(struct item item);
+void printItem(struct item item, bool pretty);
 
 #endif
