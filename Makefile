@@ -7,7 +7,7 @@ run: build
 	$(BUILD_DIR)/$(TARGET)
 
 build: $(BUILD_DIR)/main.o $(BUILD_DIR)/hn.o $(BUILD_DIR)/client.o
-	$(CC) $(BUILD_DIR)/main.o $(BUILD_DIR)/hn.o $(BUILD_DIR)/client.o -o $(BUILD_DIR)/$(TARGET) -ljson-c -lcurl
+	$(CC) $(BUILD_DIR)/main.o $(BUILD_DIR)/hn.o $(BUILD_DIR)/client.o -o $(BUILD_DIR)/$(TARGET) -ljson-c -lcurl -lpthread
 
 $(BUILD_DIR)/main.o: $(SRC_DIR)/main.c
 	$(CC) -Wall -c $(SRC_DIR)/main.c -o $(BUILD_DIR)/main.o
