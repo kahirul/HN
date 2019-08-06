@@ -36,7 +36,7 @@ int main(int argc, char const *argv[])
 
             struct json_object *id;
 
-            int topN = 8;
+            size_t topN = 8;
             if (ids_len < topN)
             {
                 topN = ids_len;
@@ -50,7 +50,7 @@ int main(int argc, char const *argv[])
 
             pthread_t threads[topN];
 
-            for (int i = 0; i < topN; i++)
+            for (size_t i = 0; i < topN; i++)
             {
                 struct item_id_idx *arg = malloc(sizeof(struct item_id_idx *));
 
@@ -61,7 +61,7 @@ int main(int argc, char const *argv[])
                 pthread_create(&threads[i], NULL, fetch_item_async, (void *)arg);
             }
 
-            for (int i = 0; i < topN; i++)
+            for (size_t i = 0; i < topN; i++)
             {
                 pthread_join(threads[i], NULL);
             }
