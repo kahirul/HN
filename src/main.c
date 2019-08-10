@@ -1,5 +1,6 @@
 #include "hn.h"
 #include "fetcher.h"
+#include "ui.h"
 
 int main(int argc, char const *argv[])
 {
@@ -10,14 +11,12 @@ int main(int argc, char const *argv[])
     }
     else
     {
-        size_t topN = 3;
+        size_t topN = 15;
         struct item *top_stories[topN];
         fetch_top_stories(top_stories, topN);
 
-        for (size_t i = 0; i < topN; i++)
-        {
-            printItem(*top_stories[i], true);
-        }
+        init_curses();
+        draw_app(top_stories, topN);
     }
 
     return 0;
