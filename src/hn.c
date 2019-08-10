@@ -153,7 +153,8 @@ void printItem(struct item item, bool pretty)
     char *tab = " ";
     char *newLine = "";
 
-    if (pretty) {
+    if (pretty)
+    {
         tab = "\t";
         newLine = "\n";
     }
