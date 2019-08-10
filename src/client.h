@@ -3,6 +3,7 @@
 
 #include <stdio.h>
 #include <stdbool.h>
+#include <curl/curl.h>
 #include <json-c/json.h>
 
 struct curl_fetch_t
